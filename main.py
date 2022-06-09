@@ -84,7 +84,7 @@ while idade2 < 6:
 
    print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
 
-   idade = int(input("  IDADE:  "))
+   idade2 = int(input("  IDADE:  "))
 
 else:
 
@@ -116,9 +116,9 @@ con.commit()
 
 print("\n  CADASTROS FINALIZADOS!  ")
 
-tutorial = input("\n  DESEJA INICIAR O TUTORIAL? [S/N]  ")
+tutorial = input("\n  DESEJA INICIAR O TUTORIAL? [s/n]  ")
 
-if tutorial == "S":
+if tutorial == "s":
 
   print("  O JOGO CONSISTE EM UMA CORRIDA ALTERNADA POR 2 PLAYERS EM 4 RODADAS, A CADA RODADA O PLAYER PRECISA JOGAR OS DOIS DADOS PARA SABER QUANTAS CASAS DEVERÁ ANDAR PELA SOMA DE SEUS VALORES, APÓS AS 4 RODADAS, O TRILHEIRO QUE PERCORREU MAIS CASAS VENCE. ")
 
