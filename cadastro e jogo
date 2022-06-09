@@ -1,0 +1,137 @@
+import sqlite3
+
+import random
+
+ 
+
+#ARMAZENANDO DADOS DE CADASTRO EM UM BANCO DE DADOS
+
+con = sqlite3.connect('dados_cadastro.db')
+
+cursor = con.cursor()
+
+ 
+
+cursor.execute('''CREATE TABLE "PLAYERS" (
+
+               "nome" TEXT,
+
+               "idade" INTEGER,
+
+               "email" TEXT
+
+              
+
+);''')
+
+con.commit()
+
+ 
+
+#CADASTRO DO PLAYER 1
+
+print("  BEM VINDO(A) AO JOGO DE TRILHA!  ")
+
+print("  \n PLAYER1, CADASTRE-SE PARA JOGAR:   ")
+
+nome = input("  NOME:   ")
+
+idade = int(input("  IDADE:  "))
+
+while idade < 6:
+
+   print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
+
+   idade = int(input("  IDADE:  "))
+
+else:
+
+  print(f"{nome}, seja bem vindo(a)!")
+
+ 
+
+email = input("  EMAIL:   ")
+
+while email.find("@") == -1:
+
+  print("  INSIRA UM EMAIL VÁLIDO! ")
+
+  email = input("  EMAIL:   ")
+
+else:
+
+  print("  EMAIL VÁLIDO!  ")
+
+ 
+
+#ARMAZENAMENTO DO CADASTRO DO PLAYER 1 NO BANCO DE DADOS
+
+cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome}','{idade}','{email}')")
+
+con.commit()
+
+ 
+
+#CADASTRO DO PLAYER2
+
+print("  \n PLAYER2, CADASTRE-SE PARA JOGAR:   ")
+
+nome2 = input("  NOME:   ")
+
+idade2 = int(input("  IDADE:  "))
+
+while idade2 < 6:
+
+   print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
+
+   idade = int(input("  IDADE:  "))
+
+else:
+
+  print(f"{nome2}, seja bem vindo(a)!")
+
+ 
+
+email2 = input("  EMAIL:   ")
+
+while email2.find("@") == -1:
+
+  print("  INSIRA UM EMAIL VÁLIDO! ")
+
+  email2 = input("  EMAIL:   ")
+
+else:
+
+  print("  EMAIL VÁLIDO!  ")
+
+ 
+
+#ARMAZENAMENTO DO CADASTRO DO PLAYER 2 NO BANCO DE DADOS
+
+cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome2}','{idade2}','{email2}')")
+
+con.commit()
+
+ 
+
+print("\n  CADASTROS FINALIZADOS!  ")
+
+tutorial = input("\n  DESEJA INICIAR O TUTORIAL? [S/N]  ")
+
+if tutorial == "S":
+
+  print("  O JOGO CONSISTE EM UMA CORRIDA ALTERNADA POR 2 PLAYERS EM 4 RODADAS, A CADA RODADA O PLAYER PRECISA JOGAR OS DOIS DADOS PARA SABER QUANTAS CASAS DEVERÁ ANDAR PELA SOMA DE SEUS VALORES, APÓS AS 4 RODADAS, O TRILHEIRO QUE PERCORREU MAIS CASAS VENCE. ")
+
+ 
+
+start = input("  PRESSIONE QUALQUER TECLA PARA INICIAR O JOGO  ")
+
+dado = [1,2,3,4,5,6]
+
+dado1 = random.choice(dado)
+
+dado2 = random.choice(dado)
+
+print(dado1)
+
+print(dado2)
