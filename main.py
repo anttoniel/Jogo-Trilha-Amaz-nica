@@ -112,21 +112,31 @@ cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome2}','{idade2}','{email2}')")
 
 con.commit()
 
- 
 
 print("\n  CADASTROS FINALIZADOS!  ")
 
+dado = [1,2,3,4,5,6]
+
 tutorial = input("\n  DESEJA INICIAR O TUTORIAL? [s/n]  ")
 
+dadoteste1 = random.choice(dado)
+dadoteste2 = random.choice(dado)
+
 if tutorial == "s":
-
-  print("  O JOGO CONSISTE EM UMA CORRIDA ALTERNADA POR 2 PLAYERS EM 4 RODADAS, A CADA RODADA O PLAYER PRECISA JOGAR OS DOIS DADOS PARA SABER QUANTAS CASAS DEVERÁ ANDAR PELA SOMA DE SEUS VALORES, APÓS AS 4 RODADAS, O TRILHEIRO QUE PERCORREU MAIS CASAS VENCE. ")
-
+  print("\n  O JOGO CONSISTE EM UMA CORRIDA ALTERNADA POR 2 PLAYERS EM 4 RODADAS, A CADA RODADA O PLAYER PRECISA JOGAR OS DOIS DADOS PARA SABER QUANTAS CASAS DEVERÁ ANDAR PELA SOMA DE SEUS VALORES, APÓS AS 4 RODADAS, O TRILHEIRO QUE PERCORREU MAIS CASAS VENCE. ")
+  
+  print("------------ RODADA TESTE ------------")
+  rodadatest = input("  INSIRA 'd' PARA JOGAR OS DADOS:  ")
+  while rodadatest != "d":
+   print("\n  VOCÊ NÃO JOGOU OS DADOS, DIGITOU A TECLA ERRADA!  ")
+   rodadatest = input(" INSIRA 'd' PARA JOGAR OS DADOS:  ")
+    
+  if rodadatest == "d":
+    print(f"\n  MUITO BEM! OS VALORES DOS DADOS FORAM {dadoteste1} E {dadoteste2}  ")
  
 
-start = input("  PRESSIONE QUALQUER TECLA PARA INICIAR O JOGO  ")
+start = input("  PRESSIONE ENTER PARA INICIAR O JOGO  ")
 
-dado = [1,2,3,4,5,6]
 
 dado1 = random.choice(dado)
 dado2 = random.choice(dado)
@@ -146,10 +156,11 @@ dado15 = random.choice(dado)
 dado16 = random.choice(dado)
 
 
-print("-----------------RODADA 1-----------------")
+
+print("\n-----------------RODADA 1-----------------")
 d = input(f"{nome}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado1} E {dado2}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado1} E {dado2}!  " )
         c11 = dado1 + dado2
         if dado1 == dado2:
                 c11 = c11*2
@@ -167,7 +178,7 @@ else:
 
 d = input(f"\n{nome2}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado3} E {dado4}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado3} E {dado4}!  " )
         c21 = dado3 + dado4
         if dado3 == dado4:
                 c21 = c21*2
@@ -186,7 +197,7 @@ else:
 print("\n-----------------RODADA 2-----------------")
 d = input(f"\n{nome}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado5} E {dado6}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado5} E {dado6}!  " )
         c12 = dado5 + dado6
         if dado5 == dado6:
                 c12 = c12*2
@@ -208,7 +219,7 @@ else:
 
 d = input(f"\n{nome2} DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado7} E {dado8}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado7} E {dado8}!  " )
         c22 = dado7 + dado8
         if dado7 == dado8:
                 c22 = c22*2
@@ -228,7 +239,7 @@ else:
 print("\n-----------------RODADA 3-----------------")
 d = input(f"\n{nome}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado9} E {dado10}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado9} E {dado10}!  " )
         c13 = dado9 + dado10
         if dado9 == dado10:
                 c13 = c13*2
@@ -243,7 +254,7 @@ else:
 
 d = input(f"\n{nome2}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado11} E {dado12}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado11} E {dado12}!  " )
         c23 = dado11 + dado12
         if dado11 == dado12:
                 c23 = c23*2
@@ -259,7 +270,7 @@ else:
 print("\n-----------------RODADA 4-----------------")
 d = input(f"\n{nome}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado13} E {dado14}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado13} E {dado14}!  " )
         c14 = dado13 + dado14
         if dado13 == dado14:
                 c13 = c14*2
@@ -274,7 +285,7 @@ else:
 
 d = input(f"\n{nome2}, DIGITE 'd' PARA JOGAR OS DADOS ")
 if d == "d":
-        print(f"    OS VALORES DOS DADOS FORAM {dado15} E {dado16}!  " )
+        print(f"\n    OS VALORES DOS DADOS FORAM {dado15} E {dado16}!  " )
         c24 = dado15 + dado16
         if dado15 == dado16:
                 c24 = c24*2
