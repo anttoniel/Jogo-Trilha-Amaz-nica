@@ -156,7 +156,7 @@ if d == "d":
                 print("VOCÊ ESTÁ COM SORTE! CONSEGUIU NÚMEROS IGUAIS NOS DADOS E VAI AVANÇAR O DOBRO DE CASAS!")
         p11 = c11
         if 8>p11<13:
-                print("VOCÊ ENCONTROU UMA NOVA ESPÉCIE RARA DE SERPENTES EM SUA TRILHA, AVANCE MAIS DUAS CASAS!")
+                print("VOCÊ ENCONTROU UMA NOVA ESPÉCIE RARA DE RÃS EM SUA TRILHA, AVANCE MAIS DUAS CASAS!")
                 c11 = c11 + 2
                 p11 = c11 
         print(f"PLAYER1 AVANÇA {c11} CASAS E FICA NA CASA {p11}.")
@@ -174,10 +174,10 @@ if d == "d":
                 print("VOCÊ ESTÁ COM SORTE! CONSEGUIU NÚMEROS IGUAIS NOS DADOS E VAI AVANÇAR O DOBRO DE CASAS!")
         p21 = c21
         if 8>p21<13:
-                print("VOCÊ ENCONTROU UMA NOVA ESPÉCIE RARA DE SERPENTES EM SUA TRILHA, AVANCE MAIS DUAS CASAS!")
+                print("VOCÊ ENCONTROU UMA NOVA ESPÉCIE RARA DE RÃS EM SUA TRILHA, AVANCE MAIS DUAS CASAS!")
                 c21 = c21 + 2
                 p21 = c21
-        print(f"PLAYER1 AVANÇA {c21} CASAS E FICA NA CASA {p21}.")
+        print(f"PLAYER2 AVANÇA {c21} CASAS E FICA NA CASA {p21}.")
         
 else: 
         print(" VOCÊ NÃO JOGOU OS DADOS E PASSOU A VEZ! ")
@@ -218,7 +218,7 @@ if d == "d":
           print("VOCÊ FOI ATACADO POR UMA CASCAVEL NO CAMINHO E NÃO PÔDE AVANÇAR 3 CASAS! ")
           c22 = c22 - 3
           p22 = p22 - 3
-        print(f"PLAYER1 AVANÇA {c22} CASAS E FICA NA CASA {p22}.")
+        print(f"PLAYER2 AVANÇA {c22} CASAS E FICA NA CASA {p22}.")
         
 else: 
         print(" VOCÊ NÃO JOGOU OS DADOS E PASSOU A VEZ! ")
@@ -249,7 +249,7 @@ if d == "d":
                 c23 = c23*2
                 print("VOCÊ ESTÁ COM SORTE! CONSEGUIU NÚMEROS IGUAIS NOS DADOS E VAI AVANÇAR O DOBRO DE CASAS!")
         p23 = c23 + p22
-        print(f"PLAYER1 AVANÇA {c23} CASAS E FICA NA CASA {p23}.")
+        print(f"PLAYER2 AVANÇA {c23} CASAS E FICA NA CASA {p23}.")
         
 else: 
         print(" VOCÊ NÃO JOGOU OS DADOS E PASSOU A VEZ! ")
@@ -280,7 +280,7 @@ if d == "d":
                 c24 = c24*2
                 print("VOCÊ ESTÁ COM SORTE! CONSEGUIU NÚMEROS IGUAIS NOS DADOS E VAI AVANÇAR O DOBRO DE CASAS!")
         p24 = c24 + p23
-        print(f"PLAYER1 AVANÇA {c24} CASAS E FICA NA CASA {p24}.")
+        print(f"PLAYER2 AVANÇA {c24} CASAS E FICA NA CASA {p24}.")
         
 else: 
         print(" VOCÊ NÃO JOGOU OS DADOS E PASSOU A VEZ! ")
