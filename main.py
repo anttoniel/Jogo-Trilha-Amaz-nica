@@ -20,7 +20,7 @@ cursor.execute('''CREATE TABLE "PLAYERS" (
 
                "email" TEXT,
 
-               "score" 
+               "score" INTEGER
 
               
 
@@ -299,10 +299,10 @@ cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome2}','{idade2}','{email2}','{p2
 
 con.commit()
 
-restart = input("\n INSIRA 'j' PARA JOGAR DE NOVO:  ")
+restart = input("\n INSIRA 'j' PARA JOGAR DE NOVO OU ENTER PARA ENCERRAR:  ")
 
 while restart == "j":
- #CADASTRO DO PLAYER 1
+
 
  print("\n  BEM VINDO(A) AO JOGO DA TRILHA AMAZÔNICA!  ")
  novocadastro = input("\n DESEJA CADASTRAR NOVOS PLAYERS? [s/n] ")
@@ -558,11 +558,24 @@ while restart == "j":
  elif p24 > p14:
          print(f"\n {nome2} VENCEU O JOGO !!! {p24-p14} CASAS À FRENTE DE {nome} NA TRILHA.   ") 
 
- 
+ cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome}','{idade}','{email}','{p14}')")
+
+ con.commit()
+ #ARMAZENAMENTO DO CADASTRO DO PLAYER 2 NO BANCO DE DADOS
+ cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome2}','{idade2}','{email2}','{p24}')") 
+ con.commit()
 
  restart = input(" INSIRA 'j' PARA JOGAR DE NOVO OU 'Enter' PARA ENCERRAR:  ")
 else:
- print(" VOLTE SEMPRE À TRILHA AMAZÔNICA !!!  ")  
+ print("\n VOLTE SEMPRE À TRILHA AMAZÔNICA !!!  ")  
+ cursor.execute(f"SELECT SCORE, NOME FROM PLAYERS ORDER BY SCORE DESC")
+ print("\n  --- RANKING FINAL ---   \n PONTOS/PLAYERS: ")
+ for row in cursor.fetchall():
+   print("  ",row)
+ 
+ 
+ 
+
   
   
 
