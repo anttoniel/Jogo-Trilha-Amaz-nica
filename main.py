@@ -299,42 +299,43 @@ cursor.execute(f"INSERT INTO PLAYERS VALUES('{nome2}','{idade2}','{email2}','{p2
 
 con.commit()
 
-restart = input(" INSIRA 'j' PARA JOGAR DE NOVO:  ")
+restart = input("\n INSIRA 'j' PARA JOGAR DE NOVO:  ")
 
 while restart == "j":
  #CADASTRO DO PLAYER 1
 
- print("  BEM VINDO(A) AO JOGO DA TRILHA AMAZÔNICA!  ")
+ print("\n  BEM VINDO(A) AO JOGO DA TRILHA AMAZÔNICA!  ")
+ novocadastro = input("\n DESEJA CADASTRAR NOVOS PLAYERS? [s/n] ")
+ if novocadastro == 's':
+  print("  \n PLAYER1, CADASTRE-SE PARA JOGAR:   ")
 
- print("  \n PLAYER1, CADASTRE-SE PARA JOGAR:   ")
+  nome = input("  NOME:   ")
 
- nome = input("  NOME:   ")
+  idade = int(input("  IDADE:  "))
 
- idade = int(input("  IDADE:  "))
+  while idade < 6:
 
- while idade < 6:
+     print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
 
-    print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
+     idade = int(input("  IDADE:  "))
 
-    idade = int(input("  IDADE:  "))
+  else:
 
- else:
-
-   print(f"{nome}, seja bem vindo(a)!")
+    print(f"{nome}, seja bem vindo(a)!")
 
  
 
- email = input("  EMAIL:   ")
+  email = input("  EMAIL:   ")
 
- while email.find("@") == -1:
+  while email.find("@") == -1:
 
-   print("  INSIRA UM EMAIL VÁLIDO! ")
+    print("  INSIRA UM EMAIL VÁLIDO! ")
 
-   email = input("  EMAIL:   ")
+    email = input("  EMAIL:   ")
 
- else:
+  else:
 
-  print("  EMAIL VÁLIDO!  ")
+   print("  EMAIL VÁLIDO!  ")
 
  
 
@@ -344,43 +345,45 @@ while restart == "j":
 
  #CADASTRO DO PLAYER2
 
- print("  \n PLAYER2, CADASTRE-SE PARA JOGAR:   ")
+  print("  \n PLAYER2, CADASTRE-SE PARA JOGAR:   ")
 
- nome2 = input("  NOME:   ")
+  nome2 = input("  NOME:   ")
 
- idade2 = int(input("  IDADE:  "))
+  idade2 = int(input("  IDADE:  "))
 
- while idade2 < 6:
+  while idade2 < 6:
 
-    print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
+     print("  VOCÊ NÃO POSSUI IDADE SUFICIENTE PARA JOGAR!  ")
 
-    idade2 = int(input("  IDADE:  "))
+     idade2 = int(input("  IDADE:  "))
 
- else:
+  else:
 
-   print(f"{nome2}, seja bem vindo(a)!")
-
- 
-
- email2 = input("  EMAIL:   ")
-
- while email2.find("@") == -1:
-
-   print("  INSIRA UM EMAIL VÁLIDO! ")
-
-   email2 = input("  EMAIL:   ")
-
- else:
-
-   print("  EMAIL VÁLIDO!  ")
+    print(f"{nome2}, seja bem vindo(a)!")
 
  
 
+  email2 = input("  EMAIL:   ")
+
+  while email2.find("@") == -1:
+
+    print("  INSIRA UM EMAIL VÁLIDO! ")
+
+    email2 = input("  EMAIL:   ")
+
+  else:
+
+    print("  EMAIL VÁLIDO!  ")
+
+ 
 
 
 
- print("\n  CADASTROS FINALIZADOS!  ")
 
+  print("\n  CADASTROS FINALIZADOS!  ")
+
+ if novocadastro == 'n':
+  print("  PLAYERS MANTIDOS! ")
  dado = [1,2,3,4,5,6]
 
  
@@ -557,7 +560,7 @@ while restart == "j":
 
  
 
- restart = input(" INSIRA 'j' PARA JOGAR DE NOVO:  ")
+ restart = input(" INSIRA 'j' PARA JOGAR DE NOVO OU 'Enter' PARA ENCERRAR:  ")
 else:
  print(" VOLTE SEMPRE À TRILHA AMAZÔNICA !!!  ")  
   
