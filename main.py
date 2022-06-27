@@ -2,14 +2,28 @@ import sqlite3
 
 import random
 
- 
+import pygame
 
+from pygame.locals import *
+
+from sys import exit
+ 
+pygame.init()
+
+largura = 640
+altura = 480
+
+tela = pygame.display.set_mode((largura, altura))
+
+while True:
+  for event in pygame.event.get():
+    if event.type == QUIT:
+      pygame.quit()
+      exit()
+  pygame.display.update()
 #ARMAZENANDO DADOS DE CADASTRO EM UM BANCO DE DADOS
 
-con = sqlite3.connect('dados_cadastro.db')
 
-cursor = con.cursor()
- 
 
 #CADASTRO DO PLAYER 1
 
@@ -18,6 +32,9 @@ print("  BEM VINDO(A) AO JOGO DA TRILHA AMAZÔNICA!  ")
 nome = input("  PLAYER1, INSIRA SEU NOME:   ")
 
 cadastrado1= input("   DESEJA BUSCAR UM CADASTRO FEITO ANTERIORMENTE? [s/n]  ")
+con = sqlite3.connect('dados_cadastro.db')
+
+cursor = con.cursor()
 if cadastrado1 == "s":
    cursor.execute(f"SELECT nome FROM NOME")
    for row in cursor.fetchone():
