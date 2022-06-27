@@ -9,31 +9,19 @@ import random
 con = sqlite3.connect('dados_cadastro.db')
 
 cursor = con.cursor()
-
- 
-
-cursor.execute('''CREATE TABLE "PLAYERS" (
-
-               "nome" TEXT,
-
-               "idade" INTEGER,
-
-               "email" TEXT,
-
-               "score" INTEGER
-
-              
-
-);''')
-
-con.commit()
-
  
 
 #CADASTRO DO PLAYER 1
 
 print("  BEM VINDO(A) AO JOGO DA TRILHA AMAZÔNICA!  ")
 
+nome = input("  PLAYER1, INSIRA SEU NOME:   ")
+
+cadastrado1= input("   DESEJA BUSCAR UM CADASTRO FEITO ANTERIORMENTE? [s/n]  ")
+if cadastrado1 == "s":
+   cursor.execute(f"SELECT nome FROM NOME")
+   for row in cursor.fetchone():
+    print("  ",row)
 print("  \n PLAYER1, CADASTRE-SE PARA JOGAR:   ")
 
 nome = input("  NOME:   ")
@@ -111,7 +99,7 @@ dadoteste2 = random.choice(dado)
 if tutorial == "s":
   print("\n  O JOGO CONSISTE EM UMA CORRIDA ALTERNADA POR 2 PLAYERS EM 4 RODADAS, A CADA RODADA O PLAYER PRECISA JOGAR OS DOIS DADOS PARA SABER QUANTAS CASAS DEVERÁ ANDAR PELA SOMA DE SEUS VALORES, APÓS AS 4 RODADAS, O TRILHEIRO QUE PERCORREU MAIS CASAS VENCE. ")
   
-  print("------------ RODADA TESTE ------------")
+  print("\n------------ RODADA TESTE ------------")
   rodadatest = input("  INSIRA 'd' PARA JOGAR OS DADOS:  ")
   while rodadatest != "d":
    print("\n  VOCÊ NÃO JOGOU OS DADOS, DIGITOU A TECLA ERRADA!  ")
